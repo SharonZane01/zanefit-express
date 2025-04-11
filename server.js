@@ -20,3 +20,7 @@ app.listen(PORT, () => {
 app.get('/', (req, res) => {
   res.send('Server is running!');
 });
+const cors = require('cors');
+app.use(cors({
+  origin: 'https://zane-fit-sharonzane01s-projects.vercel.app/',
+}));
