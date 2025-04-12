@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const workoutRoutes = require('./routes/workoutRoutes');
+const WorkoutRoutes = require('./routes/WorkoutRoutes');
 
 const app = express();
 
@@ -13,7 +13,7 @@ app.use(cors({
 app.use(express.json());
 
 // Routes
-app.use('/api/workout', workoutRoutes);
+app.use('/api/workout', WorkoutRoutes);
 
 // Test route
 app.get('/', (req, res) => {
