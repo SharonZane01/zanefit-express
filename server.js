@@ -6,8 +6,11 @@ const app = express();
 
 // ✅ CORS setup (your frontend domain)
 app.use(cors({
-  origin: 'https://zane-fit-sharonzane01s-projects.vercel.app'
+  origin: 'https://zane-fit-sharonzane01s-projects.vercel.app',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
 }));
+
 
 // ✅ Parse incoming JSON
 app.use(express.json());
