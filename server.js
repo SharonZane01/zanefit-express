@@ -1,30 +1,27 @@
 const express = require('express');
 const cors = require('cors');
-const workoutRoutes = require('./routes/WorkoutRoutes');
+const workoutRoutes = require('./routes/workoutRoutes');
 
 const app = express();
 
-// ✅ CORS setup (your frontend domain)
+// Middleware
 app.use(cors({
-  origin: 'https://zane-fit-sharonzane01s-projects.vercel.app',
+  origin: 'https://zane-fit.vercel.app',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
 }));
-
-
-// ✅ Parse incoming JSON
 app.use(express.json());
 
-// ✅ Workout routes
+// Routes
 app.use('/api/workout', workoutRoutes);
 
-// ✅ Health check route
+// Test route
 app.get('/', (req, res) => {
   res.send('Server is running!');
 });
 
-// ✅ Start server
+// Start server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
