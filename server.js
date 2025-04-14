@@ -6,7 +6,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'https://zane-fit.vercel.app',
+  origin: ['https://zane-fit.vercel.app', 'https://zanefit.netlify.app']
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
 }));
