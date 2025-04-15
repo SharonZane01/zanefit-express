@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const WorkoutRoutes = require('./routes/WorkoutRoutes');
 const NutritionRoutes = require('./routes/NutritionRoutes');
-// const ProgressRoutes = require('./routes/ProgressRoutes');
+const ProgressRoutes = require('./routes/ProgressRoutes');
 const EquipmentRoutes = require('./routes/EquipmentRoutes');
 
 const app = express();
@@ -19,7 +19,7 @@ app.use(express.json());
 // Routes
 app.use('/api/workout', WorkoutRoutes);
 app.use('/api/nutrition', NutritionRoutes);
-// app.use('/api/progress', ProgressRoutes);
+app.use('/api/progress', ProgressRoutes);
 app.use('/api/equipment', EquipmentRoutes);
 
 
